@@ -1,6 +1,17 @@
 # MsalTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24. It is a test application to demonstrate an issue with MSAL and/or Azure AD B2C, where logout will sometimes not fully clear the user authentication.
+* Log in, then log out within 10 minutes. Second login will require re-entering credentials.
+* Log in, then log out after 15 minutes. Second login will automatically reauthenticate, without requiring credentials
+
+https://github.com/AzureAD/microsoft-authentication-library-for-js/issues/1759
+
+## MSAL Configuration
+
+This project assumes an Azure AD B2C tenant for authentication. Modify the values of tenantConfig in src/environments/environment.ts for your B2C tenant
+* tenant
+* clientID
+* b2cScopes
 
 ## Development server
 
