@@ -6,6 +6,17 @@ export const environment = {
   production: false
 };
 
+// Replace the Azure AD B2C configuration information with your values
+export const tenantConfig = {
+  loginAuthorityDomain: "login.microsoftonline.com",
+  tenant: "myb2ctenant.onmicrosoft.com",
+  clientID: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+  signUpSignInPolicy: "B2C_1_SignIn",
+  b2cScopes: ["https://myb2ctenant.onmicrosoft.com/myapplication/access"],
+  redirectUri: 'http://localhost:4200',
+  postLogoutRedirectUri: 'http://localhost:4200/signout'
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
